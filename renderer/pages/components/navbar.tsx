@@ -5,10 +5,15 @@ import { useState } from 'react';
 function Navbar() {
   return (
     <>
-      <div>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
+      <div className="justify-center flex text-center text-white m-0 p-0 list-none">
+        <ul className="space-x-5">
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </ul>
       </div>
     </>
   );
