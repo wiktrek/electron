@@ -24,7 +24,6 @@ function Home() {
   }
   useEffect(() => {
     console.log('test');
-    const interval = setInterval(i, 1000);
     setCursor(Number(localStorage.getItem('clicks')));
     setClicks(Number(localStorage.getItem('cursor')));
 
