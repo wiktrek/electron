@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import './components/navbar';
 import Navbar from '../components/navbar';
 import { useState } from 'react';
 function Home() {
@@ -10,17 +9,24 @@ function Home() {
     setClicks(clicks + 1);
     save();
   }
+  function i() {
+    setClicks(clicks + 1);
+  }
+
   function save() {
     localStorage.setItem('clicks', clicks.toString());
     localStorage.setItem('cursor', cursor.toString());
   }
   function buy_cursor() {
     if (clicks < 200) return;
+    setClicks(clicks - 200);
     setCursor(cursor + 1);
   }
   useEffect(() => {
+    console.log('test');
+    const interval = setInterval(i, 1000);
     setCursor(Number(localStorage.getItem('clicks')));
-    setClicks(Number(localStorage.getItem('clicks')));
+    setClicks(Number(localStorage.getItem('cursor')));
 
     save();
   }, []);
@@ -40,7 +46,7 @@ function Home() {
           >
             Click
           </button>
-          <button>Buy cursor</button>
+          <button onClick={buy_cursor}>Buy cursor</button>
         </div>
       </main>
     </>
