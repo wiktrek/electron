@@ -10,8 +10,8 @@ function Navbar() {
           <Link href="/">
             <a>Home</a>
           </Link>
-          <Link href="/clicker">
-            <a>clicker</a>
+          <Link href="/projects/timer">
+            <a>timer</a>
           </Link>
         </ul>
       </div>
