@@ -5,11 +5,14 @@ import { useState } from 'react';
 function Home() {
   const [clicks, setClicks] = useState(0);
   const [cursor, setCursor] = useState(0);
+  let timer = 0;
   function click() {
     setClicks(clicks + 1);
     save();
   }
   function i() {
+    console.log(timer);
+    timer += 1;
     setClicks(clicks + 1);
   }
 
@@ -26,7 +29,8 @@ function Home() {
     console.log('test');
     setCursor(Number(localStorage.getItem('clicks')));
     setClicks(Number(localStorage.getItem('cursor')));
-
+    const interval = setInterval(i, 2000);
+    clearInterval(interval);
     save();
   }, []);
 
