@@ -10,7 +10,6 @@ function Home() {
       </Head>
       <div>
         <Navbar />
-        <a></a>
       </div>
     </>
   );
